@@ -63,6 +63,8 @@ class DatabaseSeeder extends Seeder
                     ['name' => 'user management'],
                 ]);
 
+        Permission::create(['name' => 'change password']);
+
         Role::create([
             'name' => 'User'
         ])->syncPermissions(
@@ -72,6 +74,7 @@ class DatabaseSeeder extends Seeder
                 ['name' => 'create category'],
                 ['name' => 'update category'],
                 ['name' => 'delete category'],
+                ['name' => 'change password'],
             );
 
         $jamie->assignRole('Administrator');
