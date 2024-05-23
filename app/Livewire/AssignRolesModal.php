@@ -41,7 +41,7 @@ class AssignRolesModal extends ModalComponent
 
     public function saveRoles()
     {
-        //Gate::authorize('Role: assign', Permission::class);
+        Gate::authorize('user management', Permission::class);
         $user = User::find($this->user_id);
 
         $user->syncPermissions($this->permissions);
